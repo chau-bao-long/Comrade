@@ -18,3 +18,10 @@ function! comrade#events#Init() abort
         autocmd InsertLeave * call comrade#cursor#EchoCursorWarning()
     augroup END
 endfunction
+
+function! comrade#events#RegisterAutoImportOnCompletionDone() abort
+  augroup support_autoimport_when_completiondone
+    autocmd!
+    autocmd CompleteDone *.{java,kt,kts} call comrade#autoimport#OnCompletionDone()
+  augroup END
+endfunction

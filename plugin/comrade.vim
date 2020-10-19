@@ -27,5 +27,6 @@ if !exists('comrade_loaded')
     exe 'py3file' s:init_path
 
     call comrade#events#Init()
+    call comrade#events#RegisterAutoImportOnCompletionDone()
 endif
 

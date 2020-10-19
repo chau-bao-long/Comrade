@@ -11,9 +11,9 @@ class Source(Base):
         Base.__init__(self, vim)
 
         self.name = 'Comrade'
-        self.mark = '[Cde]'
-        self.filetypes = []
-        self.rank = 500
+        self.mark = '[IntelliJ]'
+        self.filetypes = ['kotlin', 'java']
+        self.rank = 999
         self.max_pattern_length = 100
         self.min_pattern_length = 1
         # Just put all possible patterns here. Category them when we have a
@@ -23,6 +23,7 @@ class Source(Base):
                               r'(::)\w*|'
                               r'(->)\w*')
         self.is_debug_enabled = True
+        self.dup = True
 
     def gather_candidates(self, context):
         buf_id = context["bufnr"]
